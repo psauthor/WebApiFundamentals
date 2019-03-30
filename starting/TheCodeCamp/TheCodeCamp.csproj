@@ -201,6 +201,8 @@
     </Compile>
     <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="Models\CampModel.cs" />
+    <Compile Include="Models\SpeakerModel.cs" />
+    <Compile Include="Models\TalkModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
