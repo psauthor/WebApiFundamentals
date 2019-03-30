@@ -12,7 +12,7 @@ namespace TheCodeCamp.Models
         public string Moniker { get; set; }
         public DateTime EventDate { get; set; } = DateTime.MinValue;
         public int Length { get; set; } = 1;
-
+        public ICollection<TalkModel> Talks { get; set; } = null;
         public string Venue { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
