@@ -42,7 +42,7 @@ namespace TheCodeCamp.Controllers
             }
         }
 
-        [Route("moniker")]
+        [Route("{moniker}")]
         public async Task<IHttpActionResult> Get(string moniker)
         {
             try
