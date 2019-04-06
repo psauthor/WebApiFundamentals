@@ -23,6 +23,7 @@ namespace TheCodeCamp.Controllers
             _repository = repository;
             _mapper = mapper;
         }
+
         [Route()]
         public async Task<IHttpActionResult> Get(bool includeTalks = false)
         {
@@ -82,7 +83,7 @@ namespace TheCodeCamp.Controllers
                 if (await _repository.GetCampAsync(model.Moniker) != null)
                 {
                     //return BadRequest("Moniker in use");
-                    ModelState.AddModelError( "Moniker", "Moniker in use");
+                    ModelState.AddModelError("Moniker", "Moniker in use");
                 }
                 if (ModelState.IsValid)
                 {
@@ -91,14 +92,13 @@ namespace TheCodeCamp.Controllers
                     if (await _repository.SaveChangesAsync())
                     {
                         var newModel = _mapper.Map<CampModel>(camp);
-                        var location = Url.Link("GetCamp", new { moniker = newModel.Moniker });
-                        return Created(location, newModel);
-
-                        // alternate
-                        //return CreatedAtRoute("GetCamp", new { moniker = newModel.Moniker }); )
+                        //var location = Url.Link("GetCamp", new { moniker = newModel.Moniker });
+                        //return Created(location, newModel);
+                         // alternate shortcuts above 2 lines
+                       return CreatedAtRoute("GetCamp", new { moniker = newModel.Moniker }, newModel);
+                        //return CreatedAtRoute("GetCamp", new { moniker = newModel.Moniker });
                     }
                 }
-
             }
             catch (Exception e)
             {
@@ -114,7 +114,7 @@ namespace TheCodeCamp.Controllers
             try
             {
                 var camp = await _repository.GetCampAsync(moniker);
-                if (camp==null) {  return NotFound();}
+                if (camp == null) { return NotFound(); }
 
                 _mapper.Map(model, camp);
 
