@@ -230,6 +230,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <None Include="packages.config" />
+    <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Data\Migrations\201901030609030_InitialCreate.resx">
