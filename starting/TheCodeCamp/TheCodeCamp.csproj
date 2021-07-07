@@ -171,7 +171,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Data\CampContext.cs" />
     <Compile Include="Data\CampRepository.cs" />
     <Compile Include="Data\Entities\Camp.cs" />
@@ -207,6 +206,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
